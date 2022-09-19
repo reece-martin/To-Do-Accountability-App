@@ -5,7 +5,7 @@ let today = day.getDay();
 document.getElementById("today").innerHTML = (daysofweek[today]);
 
 // A list of tasks in approximate time order
-const tasks = [];
+const tasks = ['Drink Water', 'Workout', 'Meditate'];
 
 function returnText(){
     tasks.push(document.getElementById("userInput").value);
