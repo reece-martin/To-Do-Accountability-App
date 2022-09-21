@@ -55,7 +55,7 @@ window.addEventListener('load', () => {
     
 });
 
-// Hide tasks placeholders that don't get overwritted.
+// Hide tasks placeholders that don't get overwritten.
 // I need an "Add additional tasks" button.
 // Either increase the ammount of placeholder tasks or find a way to create
 //an n ammount of tasks.
