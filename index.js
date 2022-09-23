@@ -16,29 +16,22 @@ window.addEventListener('load', () => {
     // Hides the finish day button, button is revealed when all tasks are input.
     // This should be bound to the "add task" button in the future.
     document.getElementById("finishday").style.display = "none";
-    
-    // A list of tasks in approximate time order, Needs to change to a user
-    //inputted list.
-    const tasks = [];
-    const taskNum = ["task1", "task2", "task3", "task4", "task5", "task6"];
-    var count = 0;
-    // Trying to make a HTML list out of the array above once created.
-   
-
-    // Changes placeholder tasks to tasks in array above.
-    // Primes them to be displayed when called.
+     
     function submitText(){
-        // Changes the pre filled tasks into customizable task names..
-        
-        tasks.push(document.getElementById("userInput").value);
-        document.getElementById(taskNum[count]).innerHTML = tasks[count];
-        count++;
-        document.getElementById("userInput").value = "";
-        
-        //document.getElementById("submittasks").style.display = "none";
-        //document.getElementById("userInput").style.display = "none";
+        // Allows the user to input any number of tasks, with a checkbox system.
+        var createBox = document.createElement("input");
+        var createTask = document.createElement("label");
+        var createBr = document.createElement("br")
+        createBox.value = (document.getElementById("userInput").value);
+        createBox.type = "checkbox";
+        createTask.innerHTML = (document.getElementById("userInput").value);
+        document.getElementById("tasklist").appendChild(createBox);
+        document.getElementById("tasklist").appendChild(createTask);
+        document.getElementById("tasklist").appendChild(createBr);
 
+        document.getElementById("userInput").value = "";
         }
+
     function hideSubmit(){
         document.getElementById("submittasks").style.display = "none";
         document.getElementById("userInput").style.display = "none";
@@ -55,7 +48,4 @@ window.addEventListener('load', () => {
     
 });
 
-// Hide tasks placeholders that don't get overwritten.
 // I need an "Add additional tasks" button.
-// Either increase the ammount of placeholder tasks or find a way to create
-//an n ammount of tasks.
