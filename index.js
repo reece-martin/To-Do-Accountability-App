@@ -29,6 +29,8 @@ window.addEventListener('load', () => {
             
             createBox.value = (document.getElementById("userInput").value);
             createBox.type = "checkbox";
+            // this is what i'm trying to reference for greying out complete tasks.
+            createBox.name = "checkboxes";
             createTask.innerHTML = (document.getElementById("userInput").value);
             document.getElementById("tasklist").appendChild(createBox);
             document.getElementById("tasklist").appendChild(createTask);
@@ -58,12 +60,22 @@ window.addEventListener('load', () => {
         document.getElementById("tasklist").style.display = "none";
         document.getElementById("addedit").style.display = "none";
     }
+    
+    var checkboxes = document.getElementsByName("checkboxes");
 
     function greyOut(){
-        /* Makes completed tasks grey once checked. Failing to isolate individual
-        tasks */
-        document.getElementById("tasklist").style.color = "grey";
-        console.log(document.getElementById("tasklist"));
+        // Supposed to make checked items grey. Debugging currently.
+        for (let i = 0; i < checkboxes.length; i++){
+            if (checkboxes[i].checked == true) {
+                checkboxes[i].style.color = "grey";
+            }  else {
+                checkboxes[i].color = "black";
+        }
+    }    
+    }
+    // End of day, add warnings about unfinished tasks ect.
+    function finishDay(){
+        alert("Congratulations! Another day done!")
     }
 
     // Calls submitText when button is clicked.
@@ -72,14 +84,15 @@ window.addEventListener('load', () => {
     document.getElementById("finishinput").onclick = hideSubmit;
     // Calls addEdit when button is clicked.
     document.getElementById("addedit").onclick = addEdit;
-    // Greys out tasklist when clicked.
+    // Greys out tasklist when clicked (Not Working)
     document.getElementById("tasklist").onclick = greyOut;
-    
+    // Congratulates the user on finishing the day.
+    document.getElementById("finishday").onclick = finishDay;
    
 });
 
 // onclick turn text into submission box with previous text as placeholder?
-// I need to center the finishday button which is ignoring the global center.
+// The whole tasklist is turning grey, needs to just be the checked elements.
 // I need to make pressing enter in userInput, activate the submit function.
 // I need an "Add additional/edit tasks" button.
 // Finish my day sould bring up an alert/new screen.
