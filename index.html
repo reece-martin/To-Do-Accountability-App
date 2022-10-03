@@ -11,13 +11,13 @@
 	<body>
         <br>       
         <!-- Below should be overwritten as the current day -->
-		<h1 id="today">Import Day from Calander</h1><h1 id="daysover1"> is over.</h1><br>
+		<h1 id="today" class="theday">Import Day from Calander</h1><h1 id="daysover1"> is over.</h1><br>
         <br>
         <input id="userInput" type="text" placeholder="Task">
         
         <!-- Calls returnText when button is clicked. -->
-        <input id="submittasks" type="button" value="Submit Tasks">        
-		<div id="tasklist">
+        <input id="submittasks" type="button" value="Submit">        
+		<div id="tasklist" class="tasklist">
             
         </div>
         <br>
@@ -25,7 +25,6 @@
         <input id="finishinput" type="button" value="That's all my tasks!">
         <!-- Below button will progress to "Add/Edit Tasks" -->
         <input id="addedit" type="button" value="Add Tasks">
-        <br>
         <input id="finishday" type="button" value="Finish my day">
         <h2 id="daysover2">Congratulations on finishing another day!<br>You're Awesome!</h2>
         <br><br>
