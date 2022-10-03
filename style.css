@@ -11,6 +11,10 @@ html
     color: #E1E5F2;
 }
 
+body {
+    color: #E1E5F2;
+}
+
 [type=text] {
     text-align: left;
     background-color: white;
