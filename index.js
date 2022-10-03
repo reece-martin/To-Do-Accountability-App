@@ -3,6 +3,9 @@ window.addEventListener('load', () => {
 
 
     document.getElementById("tasklist").style.display = "none";
+    // trying to link an API that provides a random inspirational quote.
+    
+  
 
 
 
@@ -13,10 +16,14 @@ window.addEventListener('load', () => {
     let today = day.getDay();
     document.getElementById("today").innerHTML = (daysofweek[today]);
 
-    // Hides the finish day button, button is revealed when all tasks are input.
-    // This should be bound to the "add task" button in the future.
+    // Hides/shows the necessary buttons to start the app.
     document.getElementById("finishday").style.display = "none";
     document.getElementById("addedit").style.display = "none";
+    document.getElementById("daysover1").style.display = "none";
+    document.getElementById("daysover2").style.display = "none";
+    document.getElementById("today").style.display = "inline";
+    document.getElementById("reset").style.display = "none";
+    document.getElementById("goback").style.display = "none";
      
     function submitText(){
         /* Allows the user to input any number of tasks, only tasks with text 
@@ -31,12 +38,16 @@ window.addEventListener('load', () => {
             createBox.type = "checkbox";
             // this is what i'm trying to reference for greying out complete tasks.
             createBox.name = "checkboxes";
+            //testing area
+            createBox.className = "listbox";
+            //testing area
             createTask.innerHTML = (document.getElementById("userInput").value);
             document.getElementById("tasklist").appendChild(createBox);
             document.getElementById("tasklist").appendChild(createTask);
             document.getElementById("tasklist").appendChild(createBr);
 
             document.getElementById("userInput").value = "";
+
             }
         }
 
@@ -61,21 +72,53 @@ window.addEventListener('load', () => {
         document.getElementById("addedit").style.display = "none";
     }
     
-    var checkboxes = document.getElementsByName("checkboxes");
-
-    function greyOut(){
+        function greyOut(){
         // Supposed to make checked items grey. Debugging currently.
-        for (let i = 0; i < checkboxes.length; i++){
-            if (checkboxes[i].checked == true) {
-                checkboxes[i].style.color = "grey";
-            }  else {
-                checkboxes[i].color = "black";
-        }
-    }    
+        
     }
+
+    // Allows the user to submit tasks by pressing enter.
+    var input = document.getElementById("userInput");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("submittasks").click();
+        }
+    });
+    
     // End of day, add warnings about unfinished tasks ect.
     function finishDay(){
-        alert("Congratulations! Another day done!")
+        document.getElementById("submittasks").style.display = "none";
+        document.getElementById("userInput").style.display = "none";
+        document.getElementById("finishinput").style.display = "none";
+        document.getElementById("finishday").style.display = "none";
+        document.getElementById("tasklist").style.display = "none";
+        document.getElementById("addedit").style.display = "none";
+        document.getElementById("daysover1").style.display = "inline";
+        document.getElementById("daysover2").style.display = "inline";
+        document.getElementById("reset").style.display = "inline";
+        document.getElementById("goback").style.display = "inline";
+
+    }
+
+    // Reloads the document. Used for resetting the day.
+    function resetDay(){
+        location.reload();
+    }
+
+    // Returns to the list of tasks, incase of accidental calling of finishDay.
+    function goBack(){     
+        document.getElementById("daysover1").style.display = "none";
+        document.getElementById("daysover2").style.display = "none";
+        document.getElementById("today").style.display = "inline";
+        document.getElementById("reset").style.display = "none";
+        document.getElementById("goback").style.display = "none";
+        document.getElementById("submittasks").style.display = "none";
+        document.getElementById("userInput").style.display = "none";
+        document.getElementById("finishinput").style.display = "none";
+        document.getElementById("finishday").style.display = "block";
+        document.getElementById("tasklist").style.display = "block";
+        document.getElementById("addedit").style.display = "block";
     }
 
     // Calls submitText when button is clicked.
@@ -88,11 +131,15 @@ window.addEventListener('load', () => {
     document.getElementById("tasklist").onclick = greyOut;
     // Congratulates the user on finishing the day.
     document.getElementById("finishday").onclick = finishDay;
+    // Calls resetDay to reload the document.
+    document.getElementById("reset").onclick = resetDay;
+    // Returns to the list of tasks, incase of accidental calling of finishDay.
+    document.getElementById("goback").onclick = goBack;
    
 });
-
-// onclick turn text into submission box with previous text as placeholder?
-// The whole tasklist is turning grey, needs to just be the checked elements.
-// I need to make pressing enter in userInput, activate the submit function.
-// I need an "Add additional/edit tasks" button.
-// Finish my day sould bring up an alert/new screen.
+// Upcoming additions to the app:
+// If you click finsh day without completing all tasks. A warning apears.
+// import random inspirational quote from API.
+// onclick turn existing task into submission box with previous text as placeholder.
+// Grey out completed tasks.
+// Visual improvements on background, buttons, and animations.
