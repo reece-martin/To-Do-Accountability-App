@@ -4,12 +4,16 @@ html
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #022B3A;
+}
+
+.theday {
+    color: #E1E5F2;
 }
 
 [type=text] {
     text-align: left;
-    background-color: #ddd;
+    background-color: white;
     color: #666;
     padding: 0;
     border-radius: 10px;
@@ -26,13 +30,13 @@ html
 
 [type=text]:hover {
     cursor: pointer;
-    background-color: #eee;
+    background-color: #E1E5F2;
 }
 
 [type=text]:focus {
     cursor: text;
-    background-color: #333;
-    color: #eee;
+    background-color: #BFDBF7;
+    color: #022B3A;
 }
 
 [type=button] {
@@ -41,15 +45,24 @@ html
     position: relative;
     left: 0;
     border-radius: 10px;
-    border: 3px solid #7b7cca;
-    background-color: whitesmoke;
+    border: 3px solid #BFDBF7;
+    background-color: #1F7A8C;
     font-size: 16px;
-    transition: all 0.5s;
+    transition: all 0.2s;
     
 }
 
 [type=button]:hover {
-    border: 3px solid whitesmoke;
-    background-color: #7b7cca;
+    border: 4px solid #1F7A8C;
+    background-color: #BFDBF7;
+    color: #1F7A8C;
     
+}
+
+.tasklist {
+    color: #E1E5F2;
+}
+
+input {
+    accent-color: white;
 }
