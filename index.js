@@ -57,9 +57,9 @@ window.addEventListener('load', () => {
         document.getElementById("submittasks").style.display = "none";
         document.getElementById("userInput").style.display = "none";
         document.getElementById("finishinput").style.display = "none";
-        document.getElementById("finishday").style.display = "block";
+        document.getElementById("finishday").style.display = "inline";
         document.getElementById("tasklist").style.display = "block";
-        document.getElementById("addedit").style.display = "block";
+        document.getElementById("addedit").style.display = "inline";
     }
 
     function addEdit(){
