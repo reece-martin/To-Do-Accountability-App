@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
         }
     });
     
-    // End of day, add warnings about unfinished tasks ect.
+    // End of day.
     function finishDay(){
         document.getElementById("submittasks").style.display = "none";
         document.getElementById("userInput").style.display = "none";
@@ -138,6 +138,7 @@ window.addEventListener('load', () => {
    
 });
 // Upcoming additions to the app:
+// Can't click "thats all my tasks" without submitting at least 1 task.
 // If you click finsh day without completing all tasks. A warning apears.
 // import random inspirational quote from API.
 // onclick turn existing task into submission box with previous text as placeholder.
