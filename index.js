@@ -5,10 +5,7 @@ window.addEventListener('load', () => {
     document.getElementById("tasklist").style.display = "none";
     // trying to link an API that provides a random inspirational quote.
     
-  
-
-
-
+    
 
     // Displays the current day on top of the screen.
     const daysofweek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ,'Saturday'];
@@ -116,9 +113,9 @@ window.addEventListener('load', () => {
         document.getElementById("submittasks").style.display = "none";
         document.getElementById("userInput").style.display = "none";
         document.getElementById("finishinput").style.display = "none";
-        document.getElementById("finishday").style.display = "block";
+        document.getElementById("finishday").style.display = "inline";
         document.getElementById("tasklist").style.display = "block";
-        document.getElementById("addedit").style.display = "block";
+        document.getElementById("addedit").style.display = "inline";
     }
 
     // Calls submitText when button is clicked.
@@ -138,6 +135,7 @@ window.addEventListener('load', () => {
    
 });
 // Upcoming additions to the app:
+// May have to create a hidden array of tasks beside the actual list.
 // Can't click "thats all my tasks" without submitting at least 1 task.
 // If you click finsh day without completing all tasks. A warning apears.
 // import random inspirational quote from API.
